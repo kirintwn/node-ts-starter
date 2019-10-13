@@ -1,0 +1,41 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "eslint . --ext=\".js,.ts\" --fix && tsc --noEmit",
+    "test": "NODE_ENV=test jest",
+    "dev": "nodemon",
+    "build": "rm -rf build && tsc",
+    "start": "npm run build && node build"
+  },
+  "author": "Kirintw",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/nconf": "^0.10.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.19.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "jest-junit": "^8.0.0",
+    "lint-staged": "^9.4.2",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.17.1",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "nconf": "^0.10.0",
+    "source-map-support": "^0.5.13",
+    "typescript": "^3.6.4",
+    "winston": "^3.2.1"
+  }
+}
