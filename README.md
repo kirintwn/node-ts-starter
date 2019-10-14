@@ -12,6 +12,7 @@ The Boilerplate is a professional backend template for building fast, robust, an
 
 - `npm test`: run tests
 - `npm run lint`: lint with auto-fixing
+- `npm run typecheck`: typecheck with tsc (without building the code)
 - `npm run build`: build without execution
 - `npm run dev`: dev with hot reloading (provided by [`nodemon`](https://github.com/remy/nodemon) & [`ts-node`](https://github.com/TypeStrong/ts-node))
 

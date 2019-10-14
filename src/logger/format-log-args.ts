@@ -1,5 +1,6 @@
 import path from 'path';
 import chalk from 'chalk';
+import { StackInfo } from '../common/types';
 
 const ERROR_STACK_LIMIT = 3;
 const SRC_ROOT = path.join(__dirname, '../../src');
@@ -7,7 +8,7 @@ const SRC_ROOT = path.join(__dirname, '../../src');
 // Reference:
 // https://v8.dev/docs/stack-trace-api
 // https://gist.github.com/transitive-bullshit/39a7edc77c422cbf8a18
-const getStackInfo = (stackIndex) => {
+const getStackInfo = (stackIndex: number): StackInfo | null => {
   const error = new Error();
   const stacklist = error.stack && error.stack.split('\n').slice(3);
 
@@ -32,14 +33,16 @@ const getStackInfo = (stackIndex) => {
   return null;
 };
 
-const getLines = (str, count) => str.split('\n', count).join('\n');
-const prependSpace = (str, count) =>
+const getLines = (str: string, count: number): string =>
+  str.split('\n', count).join('\n');
+
+const prependSpace = (str: string, count: number): string =>
   str
     .split('\n')
     .map((line, index) => (index !== 0 ? `${' '.repeat(count)}${line}` : line))
     .join('\n');
 
-const formatLogArgs = (message, levelLength) => {
+const formatLogArgs = (message, levelLength: number): string => {
   let res = message;
   const stackInfo = getStackInfo(1);
 
@@ -48,7 +51,7 @@ const formatLogArgs = (message, levelLength) => {
     const spaceCount = calleeStr.length + levelLength + 2;
     calleeStr = chalk.gray(calleeStr);
 
-    if (res instanceof Error) {
+    if (res instanceof Error && res.stack) {
       res = `${calleeStr} ${chalk.red(
         prependSpace(
           getLines(res.stack, ERROR_STACK_LIMIT + 1),
