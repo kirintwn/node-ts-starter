@@ -30,7 +30,7 @@ jobs:
           command: npx eslint . --ext=".js,.ts" --quiet
       - run:
           name: Typecheck with TSC
-          command: npx tsc --noEmit
+          command: npm run typecheck
       - run:
           name: Test
           command: npx jest --ci --maxWorkers=2 --reporters="default" --reporters="jest-junit"

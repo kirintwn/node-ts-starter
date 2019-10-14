@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "lint": "eslint . --ext=\".js,.ts\" --fix && tsc --noEmit",
+    "lint": "eslint . --ext=\".js,.ts\" --fix",
+    "typecheck": "tsc --noEmit",
     "test": "NODE_ENV=test jest",
     "dev": "nodemon",
     "build": "rm -rf build && tsc",
