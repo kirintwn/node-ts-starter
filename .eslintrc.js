@@ -9,8 +9,6 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
-    'plugin:import/errors',
-    'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:jest/recommended',
     'prettier',
@@ -51,8 +49,6 @@ module.exports = {
       },
       extends: [
         'airbnb-base',
-        'plugin:import/errors',
-        'plugin:import/warnings',
         'plugin:import/typescript',
         'plugin:jest/recommended',
         'plugin:@typescript-eslint/recommended',
