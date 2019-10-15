@@ -1,7 +1,9 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
+    tsconfigRootDir: './',
   },
   env: {
     node: true,
@@ -9,11 +11,13 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
     'plugin:jest/recommended',
-    'prettier',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
   ],
-  plugins: ['jest', 'prettier'],
+  plugins: ['@typescript-eslint', 'jest', 'prettier'],
   rules: {
     'class-methods-use-this': 'warn',
     'consistent-return': 'warn',
@@ -38,24 +42,4 @@ module.exports = {
       },
     ],
   },
-  overrides: [
-    {
-      files: ['*.ts'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        tsconfigRootDir: './',
-      },
-      extends: [
-        'airbnb-base',
-        'plugin:import/typescript',
-        'plugin:jest/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'prettier',
-        'prettier/@typescript-eslint',
-      ],
-      plugins: ['@typescript-eslint', 'jest', 'prettier'],
-    },
-  ],
 };
