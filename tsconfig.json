@@ -9,7 +9,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
-    "noImplicitThis": true,
     "sourceMap": true,
     "outDir": "build"
   },
