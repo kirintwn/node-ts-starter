@@ -11,13 +11,12 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
-    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
   ],
-  plugins: ['@typescript-eslint', 'jest', 'prettier'],
   rules: {
     'class-methods-use-this': 'warn',
     'consistent-return': 'warn',
