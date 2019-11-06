@@ -36,7 +36,7 @@
     "chalk": "^2.4.2",
     "nconf": "^0.10.0",
     "source-map-support": "^0.5.16",
-    "typescript": "^3.6.4",
+    "typescript": "^3.7.2",
     "winston": "^3.2.1"
   }
 }
