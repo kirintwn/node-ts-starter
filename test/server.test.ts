@@ -1,5 +1,5 @@
-import { add } from '../src';
+import server from '../src';
 
 test('Add()', () => {
-  expect(add(1, 1)).toEqual(2);
+  expect(server()).toEqual('hello world');
 });

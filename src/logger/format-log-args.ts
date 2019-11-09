@@ -27,8 +27,8 @@ const getStackInfo = (stackIndex: number): StackInfo | null => {
   const stackReg = /at\s+(.*)\s+\((.*):(\d*):(\d*)\)/gi;
   const stackReg2 = /at\s+()(.*):(\d*):(\d*)/gi;
 
-  const s = stacklist[stackIndex] || stacklist[0];
-  const sp = stackReg.exec(s) || stackReg2.exec(s);
+  const s = stacklist[stackIndex] ?? stacklist[0];
+  const sp = stackReg.exec(s) ?? stackReg2.exec(s);
 
   if (!sp || sp.length < 5) return null;
 
