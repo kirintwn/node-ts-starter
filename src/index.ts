@@ -1,17 +1,5 @@
 import 'source-map-support/register';
-import config from './config';
-import logger from './logger';
+import { promises as dns, LookupAddress } from 'dns';
 
-const PORT = config.get('PORT') ?? 3000;
-
-const server = (): string => {
-  logger.debug(`The port is: ${PORT}`);
-  logger.info('hello world');
-  return 'hello world';
-};
-
-if (!module.parent) {
-  server();
-}
-
-export default server;
+const lookupGoogle = (): Promise<LookupAddress> => dns.lookup('google.com');
+export default lookupGoogle;

@@ -26,11 +26,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: Lint with ESLint
-          command: npx eslint . --ext=".js,.ts" --quiet
-      - run:
-          name: Typecheck with TSC
-          command: npm run typecheck
+          name: Pretest
+          command: npm run pretest
       - run:
           name: Test
           command: npx jest --ci --maxWorkers=2 --reporters="default" --reporters="jest-junit"

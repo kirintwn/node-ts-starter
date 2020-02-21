@@ -31,6 +31,15 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-    'import/extensions': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
 };
