@@ -1,0 +1,9 @@
+{
+  "testEnvironment": "node",
+  "modulePathIgnorePatterns": ["<rootDir>/build/"],
+  "preset": "ts-jest",
+  "verbose": true,
+  "collectCoverage": true,
+  "collectCoverageFrom": ["src/**/*"],
+  "coverageDirectory": "./coverage/"
+}
