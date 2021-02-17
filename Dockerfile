@@ -1,4 +1,4 @@
-FROM node:14.15.4-alpine3.12 AS base
+FROM node:14.15.5-alpine3.13 AS base
 
 
 FROM base AS builder
@@ -13,7 +13,7 @@ RUN npm run build
 
 FROM base AS deps-builder
 
-RUN apk add --no-cache curl~=7.69
+RUN apk add --no-cache curl~=7.74
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN curl -sfL https://gobinaries.com/tj/node-prune | PREFIX=/usr/local/bin sh
 WORKDIR /opt/app
