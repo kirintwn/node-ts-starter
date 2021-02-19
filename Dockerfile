@@ -27,7 +27,7 @@ FROM base AS app
 RUN apk add --no-cache tini~=0.19
 WORKDIR /opt/app
 RUN chown -R node:node /opt/app
-COPY --chown=node:node package.json ./
+COPY --chown=node:node package*.json ./
 COPY --chown=node:node --from=deps-builder /opt/app/node_modules ./node_modules/
 COPY --chown=node:node --from=builder /opt/app/build ./build/
 ARG MAX_OLD_SPACE_SIZE=512
