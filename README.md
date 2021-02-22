@@ -1,6 +1,6 @@
 # Boilerplate
 
-The Boilerplate is a professional backend template for building fast, robust, and adaptable TypeScript Application.
+The Boilerplate is a professional backend template for building fast, robust, and adaptable TypeScript application.
 
 ## Quick start
 
