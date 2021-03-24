@@ -39,6 +39,7 @@
     "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
     "unicorn/no-null": "off",
     "unicorn/no-useless-undefined": "off",
+    "unicron/no-static-only-class": "off",
     "sonarjs/prefer-immediate-return": "off"
   }
 }
