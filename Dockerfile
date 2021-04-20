@@ -13,7 +13,7 @@ RUN npm run build
 
 FROM base AS deps-builder
 
-RUN apk add --no-cache curl~=7.74
+RUN apk add --no-cache curl~=7
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN curl -sfL https://gobinaries.com/tj/node-prune | PREFIX=/usr/local/bin sh
 WORKDIR /opt/app
