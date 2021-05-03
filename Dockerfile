@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine3.13 AS base
+FROM node:16.0.0-alpine3.13 AS base
 
 
 FROM base AS builder
@@ -29,11 +29,11 @@ WORKDIR /opt/app
 RUN chown -R node:node /opt/app
 COPY --chown=node:node package*.json ./
 COPY --chown=node:node --from=deps-builder /opt/app/node_modules ./node_modules/
-COPY --chown=node:node --from=builder /opt/app/build ./build/
+COPY --chown=node:node --from=builder /opt/app/dist ./dist/
 ARG MAX_OLD_SPACE_SIZE=512
 ENV NODE_OPTIONS=--max_old_space_size=${MAX_OLD_SPACE_SIZE}
 ENV NODE_ENV=production
 USER node
 
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["node", "build/main.js"]
+CMD ["node", "dist/main.js"]

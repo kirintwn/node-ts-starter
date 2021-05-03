@@ -40,6 +40,8 @@
     "unicorn/no-null": "off",
     "unicorn/no-useless-undefined": "off",
     "unicron/no-static-only-class": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/prefer-module": "off",
     "sonarjs/prefer-immediate-return": "off"
   }
 }
