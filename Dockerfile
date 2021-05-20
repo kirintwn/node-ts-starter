@@ -1,4 +1,4 @@
-FROM node:16.1.0-alpine3.13 AS base
+FROM node:16.2.0-alpine3.13 AS base
 
 
 FROM base AS builder
@@ -18,8 +18,10 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN curl -sfL https://gobinaries.com/tj/node-prune | PREFIX=/usr/local/bin sh
 WORKDIR /opt/app
 COPY package*.json ./
-RUN npm clean-install --only=production && npm cache clean --force
-RUN /usr/local/bin/node-prune
+RUN set -ex; \
+  npm clean-install --only=production; \
+  npm cache clean --force; \
+  /usr/local/bin/node-prune;
 
 
 FROM base AS app
