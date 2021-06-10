@@ -1,8 +1,6 @@
-FROM node:16.2.0-alpine3.13 AS base
-
+FROM node:16.3.0-alpine3.13 AS base
 
 FROM base AS builder
-
 WORKDIR /opt/app
 COPY package*.json ./
 RUN npm clean-install
@@ -10,9 +8,7 @@ COPY tsconfig*.json ./
 COPY src ./src/
 RUN npm run build
 
-
 FROM base AS deps-builder
-
 RUN apk add --no-cache curl~=7
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN curl -sfL https://gobinaries.com/tj/node-prune | PREFIX=/usr/local/bin sh
@@ -23,9 +19,7 @@ RUN set -ex; \
   npm cache clean --force; \
   /usr/local/bin/node-prune;
 
-
 FROM base AS app
-
 RUN apk add --no-cache tini~=0.19
 WORKDIR /opt/app
 RUN chown -R node:node /opt/app
