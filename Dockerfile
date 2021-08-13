@@ -1,4 +1,4 @@
-FROM node:16.5.0-alpine3.14 AS base
+FROM node:16.6.2-alpine3.14 AS base
 
 FROM base AS builder
 WORKDIR /opt/app
