@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run super linter
-        uses: github/super-linter@v3
+        uses: github/super-linter/slim@v4
         env:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: "true"
@@ -39,7 +39,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
@@ -56,7 +56,7 @@ jobs:
       - name: Run linting, type checking and tests
         run: npm test
       - name: Upload coverage report to codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
         with:
           flags: unittests
           fail_ci_if_error: true
