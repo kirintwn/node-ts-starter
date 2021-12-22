@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": 2021,
     "sourceType": "module",
     "tsconfigRootDir": "./",
     "project": "./tsconfig.json"
@@ -23,22 +23,15 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "camelcase": "off",
+    "camelcase": "warn",
     "import/extensions": "off",
-    "class-methods-use-this": "warn",
     "no-unused-vars": "off",
     "no-continue": "off",
     "no-bitwise": "off",
     "no-underscore-dangle": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": false
-      }
-    ],
+    "no-param-reassign": ["error", { "props": false }],
     "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
     "unicorn/no-null": "off",
-    "unicorn/no-useless-undefined": "off",
     "unicron/no-static-only-class": "off",
     "unicorn/prefer-node-protocol": "off",
     "unicorn/prefer-module": "off",
