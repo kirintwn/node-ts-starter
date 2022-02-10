@@ -1,5 +1,5 @@
 import 'source-map-support/register';
-import { promises as dns, LookupAddress } from 'dns';
+import { promises as dns, LookupAddress } from 'node:dns';
 
 const lookupGoogle = (): Promise<LookupAddress> => dns.lookup('google.com');
 
