@@ -25,6 +25,7 @@
   "rules": {
     "camelcase": "warn",
     "import/extensions": "off",
+    "import/prefer-default-export": "off",
     "no-unused-vars": "off",
     "no-continue": "off",
     "no-bitwise": "off",
