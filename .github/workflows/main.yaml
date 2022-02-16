@@ -20,11 +20,11 @@ jobs:
         uses: github/super-linter/slim@v4
         env:
           DEFAULT_BRANCH: main
-          VALIDATE_ALL_CODEBASE: "true"
-          VALIDATE_BASH: "true"
-          VALIDATE_EDITORCONFIG: "true"
-          VALIDATE_MD: "true"
-          VALIDATE_YAML: "true"
+          VALIDATE_ALL_CODEBASE: 'true'
+          VALIDATE_BASH: 'true'
+          VALIDATE_EDITORCONFIG: 'true'
+          VALIDATE_MD: 'true'
+          VALIDATE_YAML: 'true'
           FILTER_REGEX_EXCLUDE: '.*/(CHANGELOG\.md)'
 
   test:
@@ -39,7 +39,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '16.14.0'
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
