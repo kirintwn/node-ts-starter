@@ -1,9 +1,16 @@
-FROM node:16.14.0-alpine3.14 AS base
+FROM node:16.14.0-alpine3.15 AS base
 
-FROM base AS builder
+FROM base AS deps
 WORKDIR /opt/app
 COPY package*.json ./
 RUN npm clean-install
+
+FROM deps AS test
+COPY . ./
+WORKDIR /opt/app
+RUN npm run test
+
+FROM deps as builder
 COPY tsconfig*.json ./
 COPY src ./src/
 RUN npm run build
