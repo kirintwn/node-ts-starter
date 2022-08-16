@@ -82,6 +82,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: false
-          tags: kirintwn/boilerplate:test
+          tags: kirintwn/node-ts-starter:test
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

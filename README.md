@@ -1,6 +1,6 @@
-# Boilerplate
+# Node TypeScript Starter
 
-The Boilerplate is a professional backend template for building fast, robust, and adaptable TypeScript application.
+The Node TypeScript Starter is a professional backend template for building fast, robust, and adaptable TypeScript application.
 
 ## Quick start
 
