@@ -16,6 +16,8 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict",
     "plugin:jest/recommended",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
