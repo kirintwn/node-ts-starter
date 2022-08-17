@@ -21,6 +21,8 @@
     "plugin:@typescript-eslint/strict",
     "plugin:jest/recommended",
     "plugin:jest/style",
+    "plugin:jest-formatting/recommended",
+    "plugin:security/recommended",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
     "plugin:sonarjs/recommended",
