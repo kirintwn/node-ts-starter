@@ -12,6 +12,7 @@
   },
   "extends": [
     "airbnb-base",
+    "airbnb-typescript/base",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
@@ -26,8 +27,6 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "camelcase": "warn",
-    "import/extensions": "off",
     "import/prefer-default-export": "off",
     "import/order": [
       "error",
@@ -40,8 +39,6 @@
         }
       }
     ],
-    "no-shadow": "off",
-    "no-unused-vars": "off",
     "no-continue": "off",
     "no-bitwise": "off",
     "no-underscore-dangle": "off",

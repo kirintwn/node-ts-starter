@@ -7,7 +7,7 @@
     "typecheck": "tsc --noEmit",
     "pretest": "npm run lint && npm run typecheck",
     "test": "NODE_ENV=test jest",
-    "dev": "node -r esbuild-register src/main.ts",
+    "dev": "node -r @swc-node/register src/main.ts",
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/main.js",
     "clean": "rimraf coverage dist tmp"
@@ -15,17 +15,18 @@
   "author": "kirintw",
   "license": "MIT",
   "engines": {
-    "node": ">=16.14.0 <17",
-    "npm": ">= 8.3.0 <9"
+    "node": ">=16.17.0 <17",
+    "npm": ">= 8.15.0 <9"
   },
   "devDependencies": {
+    "@swc-node/register": "^1.5.1",
     "@types/jest": "^28.1.7",
     "@types/node": "^18.7.5",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
-    "esbuild-register": "^3.3.3",
     "eslint": "^8.22.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.8.3",
