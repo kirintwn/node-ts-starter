@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "node-ts-starter",
   "version": "1.0.0",
   "description": "",
@@ -16,7 +17,7 @@
   "license": "MIT",
   "engines": {
     "node": ">=16.17.0 <17",
-    "npm": ">= 8.15.0 <9"
+    "npm": ">=8.15.0 <9"
   },
   "devDependencies": {
     "@swc-node/register": "^1.5.1",
