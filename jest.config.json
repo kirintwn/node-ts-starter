@@ -1,7 +1,9 @@
 {
   "testEnvironment": "node",
   "modulePathIgnorePatterns": ["<rootDir>/dist/"],
-  "preset": "ts-jest",
+  "transform": {
+    "^.+\\.(t|j)sx?$": ["@swc-node/jest"]
+  },
   "verbose": true,
   "collectCoverage": true,
   "collectCoverageFrom": ["src/**/*"],
