@@ -1,4 +1,4 @@
-FROM node:18.15.0-alpine3.17 AS base
+FROM node:18.16.0-alpine3.17 AS base
 
 FROM base AS deps
 WORKDIR /opt/app
@@ -16,7 +16,7 @@ COPY src ./src/
 RUN npm run build
 
 FROM base AS deps-builder
-RUN apk add --no-cache curl~=7
+RUN apk add --no-cache curl~=8
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN curl -sfL https://gobinaries.com/tj/node-prune | PREFIX=/usr/local/bin sh
 WORKDIR /opt/app
